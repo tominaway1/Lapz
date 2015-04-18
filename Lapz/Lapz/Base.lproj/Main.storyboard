@@ -16,26 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-lZ-LN6">
-                                <rect key="frame" x="211" y="278" width="134" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Project">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jDE-qZ-PlB" kind="show" id="y7K-qL-C5I"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-jY-5b1">
                                 <rect key="frame" x="211" y="192" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="New">
+                                <state key="normal" title="New Project">
                                     <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="xg3-qC-Jwv" kind="show" id="BGG-n9-CtY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-lZ-LN6">
+                                <rect key="frame" x="211" y="278" width="134" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Existing Project">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="k37-Ta-Hbj" kind="show" id="NlL-2G-Jbi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,7 +45,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="279"/>
+            <point key="canvasLocation" x="247" y="287"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hdj-ok-cHo">
+            <objects>
+                <viewController id="k37-Ta-Hbj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cCt-fp-gDL"/>
+                        <viewControllerLayoutGuide type="bottom" id="bVJ-E6-PMd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qD3-zo-6Hu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KE0-Fj-Gc5">
+                                <rect key="frame" x="-1" y="0.0" width="603" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="barTintColor" red="0.97254908080000002" green="0.93725496529999996" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
+                                <items>
+                                    <navigationItem title="Existing Projects" id="OFG-pL-wQY">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="osB-sx-0Mu">
+                                            <connections>
+                                                <segue destination="vXZ-lx-hvc" kind="show" id="fAL-w6-SeJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="fZY-cr-Uof" id="l0G-oO-cry"/>
+                                </connections>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Bu-Xu-TKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="624"/>
         </scene>
         <!--New Project-->
         <scene sceneID="FW7-vA-h34">
@@ -70,32 +107,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
+                                <rect key="frame" x="0.0" y="0.0" width="603" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="barTintColor" red="0.97254908084869385" green="0.93725496530532837" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>
+                                <items>
+                                    <navigationItem title="New Project" id="Fae-Vx-YUW">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UYc-BM-9cU">
+                                            <connections>
+                                                <segue destination="vXZ-lx-hvc" kind="show" id="sF1-uQ-wBM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="fZY-cr-Uof" id="Ddj-qn-YRV"/>
+                                </connections>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="xwE-11-ob6"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tc-5h-CqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029" y="-87"/>
-        </scene>
-        <!--Choose Existing Project-->
-        <scene sceneID="Fsj-he-S87">
-            <objects>
-                <viewController title="Choose Existing Project" id="jDE-qZ-PlB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="njC-jJ-2Ij"/>
-                        <viewControllerLayoutGuide type="bottom" id="oXK-je-0yr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q9e-Pr-HLD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EcF-DC-qrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="993" y="769"/>
+            <point key="canvasLocation" x="1017" y="-89"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fAL-w6-SeJ"/>
+    </inferredMetricsTieBreakers>
 </document>
