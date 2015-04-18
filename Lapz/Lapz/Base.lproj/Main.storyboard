@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Lapzer Home-->
@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleAspectFit" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-jY-5b1">
+                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-jY-5b1">
                                 <rect key="frame" x="211" y="192" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -28,7 +28,7 @@
                                     <segue destination="xg3-qC-Jwv" kind="show" id="ZyO-gD-H5p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-lZ-LN6">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-lZ-LN6">
                                 <rect key="frame" x="211" y="278" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Existing Project">
@@ -41,17 +41,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="BfE-lZ-LN6" secondAttribute="centerX" id="Onh-IL-GGs"/>
+                            <constraint firstAttribute="centerX" secondItem="egu-jY-5b1" secondAttribute="centerX" id="rdM-iB-diq"/>
+                        </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="287"/>
+            <point key="canvasLocation" x="305" y="167"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose existing Project-->
         <scene sceneID="hdj-ok-cHo">
             <objects>
-                <viewController id="k37-Ta-Hbj" sceneMemberID="viewController">
+                <viewController title="Choose existing Project" id="k37-Ta-Hbj" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cCt-fp-gDL"/>
                         <viewControllerLayoutGuide type="bottom" id="bVJ-E6-PMd"/>
@@ -97,22 +101,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name your new Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-gz-usB">
-                                <rect key="frame" x="114" y="196" width="368" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name your new Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-gz-usB">
+                                <rect key="frame" x="116" y="196" width="368" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-s6-abs">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-s6-abs">
                                 <rect key="frame" x="130" y="278" width="346" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <segue destination="kaD-kk-DZY" kind="show" id="chD-Cv-bBI"/>
+                                    <segue destination="kaD-kk-DZY" kind="show" identifier="make_mew_project" id="chD-Cv-bBI"/>
                                 </connections>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
-                                <rect key="frame" x="0.0" y="0.0" width="603" height="44"/>
+                            <navigationBar contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
+                                <rect key="frame" x="-1" y="16" width="603" height="44"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.97254908084869385" green="0.93725496530532837" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
@@ -130,6 +134,10 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hLZ-gz-usB" secondAttribute="centerX" id="9tc-I9-pk4"/>
+                            <constraint firstAttribute="centerX" secondItem="Wg7-s6-abs" secondAttribute="centerX" id="z5U-zA-hR3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="xwE-11-ob6"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -138,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="985" y="-89"/>
         </scene>
-        <!--View Controller-->
+        <!--Take picture-->
         <scene sceneID="Flk-du-yYU">
             <objects>
-                <viewController id="kaD-kk-DZY" sceneMemberID="viewController">
+                <viewController title="Take picture" id="kaD-kk-DZY" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eEw-7U-EPT"/>
                         <viewControllerLayoutGuide type="bottom" id="pwC-Us-e7H"/>
@@ -158,6 +166,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sF1-uQ-wBM"/>
+        <segue reference="fAL-w6-SeJ"/>
     </inferredMetricsTieBreakers>
 </document>
