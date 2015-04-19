@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hxf-UI-pXn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hxf-UI-pXn">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -108,38 +108,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="water.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="flt-q7-UyC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4L-5N-Aal">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4L-5N-Aal">
                                 <rect key="frame" x="0.0" y="200" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="M1M-xC-fsq"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="QtT-yA-AIy"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="New Project">
                                     <color key="titleColor" red="1" green="0.98181454889999997" blue="0.97642218609999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Up-Yh-Kra">
-                                <rect key="frame" x="0.0" y="300" width="600" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Up-Yh-Kra">
+                                <rect key="frame" x="0.0" y="298" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="2tC-dp-B9L"/>
                                     <constraint firstAttribute="height" constant="100" id="GKz-gU-nAb"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Existing Project">
                                     <color key="titleColor" red="1" green="0.98181454889999997" blue="0.97642218609999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="water.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="flt-q7-UyC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6Up-Yh-Kra" firstAttribute="leading" secondItem="H4L-5N-Aal" secondAttribute="leading" id="1Fk-gy-oag"/>
                             <constraint firstItem="H4L-5N-Aal" firstAttribute="leading" secondItem="EDN-tr-gQ9" secondAttribute="leadingMargin" id="6H0-Ff-rvg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H4L-5N-Aal" secondAttribute="trailing" id="NmJ-bK-Ais"/>
+                            <constraint firstItem="6Up-Yh-Kra" firstAttribute="trailing" secondItem="flt-q7-UyC" secondAttribute="trailing" id="QXc-E4-Ee4"/>
+                            <constraint firstItem="Zuh-10-Ck2" firstAttribute="top" secondItem="6Up-Yh-Kra" secondAttribute="bottom" constant="202" id="TJG-sH-Ze0"/>
                             <constraint firstAttribute="trailing" secondItem="H4L-5N-Aal" secondAttribute="trailing" id="YUS-uA-3RZ"/>
+                            <constraint firstItem="6Up-Yh-Kra" firstAttribute="trailing" secondItem="H4L-5N-Aal" secondAttribute="trailing" id="cEg-X9-I8u"/>
                             <constraint firstItem="H4L-5N-Aal" firstAttribute="leading" secondItem="EDN-tr-gQ9" secondAttribute="leading" id="kmm-Kt-pzJ"/>
+                            <constraint firstItem="6Up-Yh-Kra" firstAttribute="leading" secondItem="flt-q7-UyC" secondAttribute="leading" id="yuM-e2-jWY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -178,6 +185,7 @@
                                 </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="kaD-kk-DZY" eventType="touchUpInside" id="mqB-bS-4lA"/>
+                                    <segue destination="67g-Mi-GT9" kind="show" identifier="takePhoto" id="wsj-6c-Ts9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -189,10 +197,45 @@
                             <constraint firstItem="I9e-lt-3RL" firstAttribute="top" secondItem="sFy-ZP-kL5" secondAttribute="bottom" constant="8" id="w7f-2g-ghg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ScU-gD-CXU" id="usO-t6-HSV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIv-ec-r2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2574" y="-395"/>
+        </scene>
+        <!--Photo Gallery-->
+        <scene sceneID="AA0-BQ-GpE">
+            <objects>
+                <viewController title="Photo Gallery" id="67g-Mi-GT9" customClass="PhotoGalleryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="43D-st-td6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ROW-sQ-RZp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M0q-UM-0mP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79P-ZL-lX7">
+                                <rect key="frame" x="0.0" y="64" width="600" height="430"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-TM-P6L">
+                                <rect key="frame" x="258" y="537" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="79P-ZL-lX7" id="4uc-An-4yV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmH-8E-T5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3381" y="-431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yf7-js-Zh0">
@@ -298,6 +341,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="4FR-yu-2yr"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="projectNameField" destination="bvF-Ur-vtx" id="x8J-4T-K3v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQA-aH-Xd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

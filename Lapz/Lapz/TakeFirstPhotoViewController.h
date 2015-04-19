@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface TakeFirstPhotoViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (readwrite) NSString *projectName;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, atomic) ALAssetsLibrary* library;
+
 - (IBAction)takePhoto:(UIButton *)sender;
 - (IBAction)selectPhoto:(UIButton *)sender;
 

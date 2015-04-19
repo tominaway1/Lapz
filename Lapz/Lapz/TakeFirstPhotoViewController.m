@@ -7,7 +7,13 @@
 //
 
 #import "TakeFirstPhotoViewController.h"
+#import "PhotoGalleryViewController.h"
 #import "OverlayView.h"
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
+
+
+
+
 
 //transform values for full screen support
 #define CAMERA_TRANSFORM_X 1
@@ -17,14 +23,26 @@
 #define SCREEN_WIDTH  320
 #define SCREEN_HEIGTH 480
 
+
 @interface TakeFirstPhotoViewController ()
 
 @end
 
 @implementation TakeFirstPhotoViewController
+@synthesize library;
+
+#pragma mark - View lifecycle
+
+
+- (void)viewDidUnload
+{
+    self.library = nil;
+    [super viewDidUnload];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.library = [[ALAssetsLibrary alloc] init];
     self.title = self.projectName;
     // Do any additional setup after loading the view, typically from a nib.
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -76,7 +94,13 @@
     self.imageView.image = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    [self.library saveImage:chosenImage toAlbum:self.projectName withCompletionBlock:^(NSError *error) {
+        if (error!=nil) {
+            NSLog(@"Big error: %@", [error description]);
+        }
+    }];
     
+    [picker dismissModalViewControllerAnimated:NO];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -86,17 +110,42 @@
 }
 
 
+- (void)saveImage: (UIImage*)image
+{
+    if (image != nil)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent: [NSString stringWithString: @"photo.png"] ];
+        NSData* data = UIImagePNGRepresentation(image);
+        [data writeToFile:path atomically:YES];
+    }
+}
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"takePhoto"]) {
+        
+        //        ALAssetsLibrary lib = [[ALAssetsLibrary alloc] init];
+        //        [lib addAssetsGroupAlbumWithName:[NSString stringWithFormat:@"Lapzer - %@",self.projectNameField.text] resultBlock:^(ALAssetsGroup *group) {
+        //
+        //        } failureBlock:^(NSError *error) {
+        //            <#code#>
+        //        }];
+        
+        PhotoGalleryViewController *vc = segue.destinationViewController;
+        vc.projectName =self.projectName;
+        
+    }
 }
-*/
+
 
 @end
 
