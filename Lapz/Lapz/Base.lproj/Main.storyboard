@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hxf-UI-pXn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -17,9 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-jY-5b1">
-                                <rect key="frame" x="211" y="192" width="134" height="30"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egu-jY-5b1">
+                                <rect key="frame" x="233" y="192" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="pUe-Q3-kQW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="New Project">
                                     <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,9 +31,12 @@
                                     <segue destination="xg3-qC-Jwv" kind="show" id="ZyO-gD-H5p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-lZ-LN6">
-                                <rect key="frame" x="211" y="278" width="134" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-lZ-LN6">
+                                <rect key="frame" x="233" y="278" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="X2V-je-nZ8"/>
+                                </constraints>
                                 <state key="normal" title="Existing Project">
                                     <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,15 +48,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BfE-lZ-LN6" firstAttribute="top" secondItem="egu-jY-5b1" secondAttribute="bottom" constant="56" id="FDI-jf-aQ7"/>
+                            <constraint firstItem="egu-jY-5b1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="128" id="GGC-51-BmV"/>
                             <constraint firstAttribute="centerX" secondItem="BfE-lZ-LN6" secondAttribute="centerX" id="Onh-IL-GGs"/>
                             <constraint firstAttribute="centerX" secondItem="egu-jY-5b1" secondAttribute="centerX" id="rdM-iB-diq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MZO-JE-fr6"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="167"/>
+            <point key="canvasLocation" x="1111" y="167"/>
         </scene>
         <!--Choose existing Project-->
         <scene sceneID="hdj-ok-cHo">
@@ -72,7 +81,7 @@
                                     <navigationItem title="Existing Projects" id="OFG-pL-wQY">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="osB-sx-0Mu">
                                             <connections>
-                                                <segue destination="vXZ-lx-hvc" kind="show" id="fAL-w6-SeJ"/>
+                                                <segue destination="Hxf-UI-pXn" kind="show" id="fAL-w6-SeJ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -87,12 +96,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bu-Xu-TKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="624"/>
+            <point key="canvasLocation" x="1787" y="624"/>
         </scene>
         <!--New Project-->
         <scene sceneID="FW7-vA-h34">
             <objects>
-                <viewController title="New Project" id="xg3-qC-Jwv" sceneMemberID="viewController">
+                <viewController title="New Project" id="xg3-qC-Jwv" customClass="NewProjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OF2-MJ-9gd"/>
                         <viewControllerLayoutGuide type="bottom" id="vJk-eE-vjd"/>
@@ -101,55 +110,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name your new Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-gz-usB">
-                                <rect key="frame" x="116" y="196" width="368" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your new Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-gz-usB">
+                                <rect key="frame" x="210.5" y="196" width="179" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-s6-abs">
-                                <rect key="frame" x="130" y="278" width="346" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-s6-abs">
+                                <rect key="frame" x="127" y="270.5" width="346" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="346" id="JKF-aL-m2d"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <segue destination="kaD-kk-DZY" kind="show" identifier="make_mew_project" id="chD-Cv-bBI"/>
+                                    <segue destination="kaD-kk-DZY" kind="show" identifier="make_new_project" id="chD-Cv-bBI"/>
                                 </connections>
                             </textField>
-                            <navigationBar contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
-                                <rect key="frame" x="2" y="9" width="603" height="44"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.97254908084869385" green="0.93725496530532837" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>
-                                <items>
-                                    <navigationItem title="New Project" id="Fae-Vx-YUW">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UYc-BM-9cU">
-                                            <connections>
-                                                <segue destination="vXZ-lx-hvc" kind="show" id="sF1-uQ-wBM"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <connections>
-                                    <outlet property="delegate" destination="fZY-cr-Uof" id="Ddj-qn-YRV"/>
-                                </connections>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Wg7-s6-abs" firstAttribute="top" secondItem="hLZ-gz-usB" secondAttribute="bottom" constant="54" id="8mE-Ii-yRJ"/>
                             <constraint firstAttribute="centerX" secondItem="hLZ-gz-usB" secondAttribute="centerX" id="9tc-I9-pk4"/>
+                            <constraint firstItem="hLZ-gz-usB" firstAttribute="top" secondItem="OF2-MJ-9gd" secondAttribute="bottom" constant="132" id="Wb3-xO-sab"/>
                             <constraint firstAttribute="centerX" secondItem="Wg7-s6-abs" secondAttribute="centerX" id="z5U-zA-hR3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="xwE-11-ob6"/>
+                    <navigationItem key="navigationItem" title="New Project" id="xwE-11-ob6">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="RIc-nN-DTJ"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="projectNameField" destination="Wg7-s6-abs" id="rOY-AQ-7ZM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tc-5h-CqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-89"/>
+            <point key="canvasLocation" x="1797" y="-89"/>
         </scene>
         <!--Take picture-->
         <scene sceneID="Flk-du-yYU">
             <objects>
-                <viewController title="Take picture" id="kaD-kk-DZY" sceneMemberID="viewController">
+                <viewController title="Take picture" id="kaD-kk-DZY" customClass="TakeFirstPhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eEw-7U-EPT"/>
                         <viewControllerLayoutGuide type="bottom" id="pwC-Us-e7H"/>
@@ -162,10 +164,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIv-ec-r2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="-109"/>
+            <point key="canvasLocation" x="2468" y="-109"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yf7-js-Zh0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hxf-UI-pXn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VQd-fA-BCd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="hIg-y1-YhW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="COs-oz-C4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="167"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="sF1-uQ-wBM"/>
-    </inferredMetricsTieBreakers>
 </document>
