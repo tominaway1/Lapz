@@ -264,6 +264,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghH-3a-z5l">
                                 <rect key="frame" x="0.0" y="64" width="600" height="435"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOa-uw-Pb3">
+                                <rect key="frame" x="274" y="550" width="67" height="30"/>
+                                <state key="normal" title="timelapse">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="o2V-SD-mlF" kind="show" identifier="TimestampViewController" id="maO-zo-YhG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -275,6 +284,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2A-Tb-Tti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3220" y="357"/>
+        </scene>
+        <!--Timelapse-->
+        <scene sceneID="jGs-8n-eLz">
+            <objects>
+                <viewController title="Timelapse" id="o2V-SD-mlF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="80b-O5-67u"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ihc-C8-LrD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p6t-1p-0xy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDw-vW-GcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3220" y="1185"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yf7-js-Zh0">

@@ -14,10 +14,13 @@
 
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface PhotoGalleryViewController : UIViewController
 
 @property (readwrite) NSString *projectName;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, atomic) ALAssetsLibrary* library;
+
 
 @end
