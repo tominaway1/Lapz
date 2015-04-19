@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Lapzer Home-->
@@ -115,7 +116,7 @@
                                     <segue destination="kaD-kk-DZY" kind="show" identifier="make_mew_project" id="chD-Cv-bBI"/>
                                 </connections>
                             </textField>
-                            <navigationBar contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
+                            <navigationBar contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
                                 <rect key="frame" x="-1" y="16" width="603" height="44"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.97254908084869385" green="0.93725496530532837" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>
@@ -136,6 +137,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="hLZ-gz-usB" secondAttribute="centerX" id="9tc-I9-pk4"/>
+                            <constraint firstAttribute="centerX" secondItem="zcw-Dd-MUj" secondAttribute="centerX" id="Dsv-N1-moN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zcw-Dd-MUj" secondAttribute="trailing" constant="-14" id="KYv-Fb-fz9"/>
+                            <constraint firstItem="zcw-Dd-MUj" firstAttribute="leading" secondItem="fZY-cr-Uof" secondAttribute="leadingMargin" constant="-14" id="nuS-IT-etw"/>
+                            <constraint firstAttribute="centerY" secondItem="zcw-Dd-MUj" secondAttribute="centerY" constant="294" id="oou-TW-yu1"/>
                             <constraint firstAttribute="centerX" secondItem="Wg7-s6-abs" secondAttribute="centerX" id="z5U-zA-hR3"/>
                         </constraints>
                     </view>
@@ -166,6 +171,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fAL-w6-SeJ"/>
+        <segue reference="sF1-uQ-wBM"/>
     </inferredMetricsTieBreakers>
 </document>
