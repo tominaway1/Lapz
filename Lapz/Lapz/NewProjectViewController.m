@@ -33,7 +33,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"make_new_project"]) {
+    if ([segue.identifier isEqualToString:@"makeNewProject"]) {
         
 //        ALAssetsLibrary lib = [[ALAssetsLibrary alloc] init];
 //        [lib addAssetsGroupAlbumWithName:[NSString stringWithFormat:@"Lapzer - %@",self.projectNameField.text] resultBlock:^(ALAssetsGroup *group) {
@@ -44,6 +44,7 @@
         
         TakeFirstPhotoViewController *vc = segue.destinationViewController;
         vc.projectName = self.projectNameField.text;
+        
     }
 }
 
