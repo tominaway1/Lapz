@@ -1,0 +1,43 @@
+{% load bootstrap3 %}
+{% bootstrap_messages %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% bootstrap_css %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    {% bootstrap_javascript %}
+    <title>Login</title>
+  </head>
+  <body>
+    
+    {% block content %}
+    {{ form.media }}
+
+    <div class="container">
+      <div class="jumbotron">
+        <H1> Login </H1>
+        <h4><font color="FF99FF">{{ error }}</font></h4>
+        <form method= "POST" action="" enctype="multipart/form-data">
+          <div id="form">
+            {% csrf_token %}
+            <table>
+              {% bootstrap_form form %}
+              {% buttons %}
+              <button align="center" type="submit" class="btn btn-primary">
+                {% bootstrap_icon "ok" %} Submit
+              </button>
+              <a href="create"><button type="button" class="btn btn-primary">
+                Create Account
+              </button></a>
+              {% endbuttons %}
+            </table>
+          </div>
+      </div>
+    </form>
+  {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,28 @@
+- name: apt update
+  apt: update_cache=yes
+       cache_valid_time=3600
+
+- name: apt install postgres
+  apt: pkg={{ item }}
+  with_items:
+    - postgresql-9.3
+    - postgresql-server-dev-9.3
+    - python-psycopg2
+
+- name: copy over postgres conf
+  copy: src=../shared/files/etc/postgresql/9.3/main/pg_hba.conf
+        dest=/etc/postgresql/9.3/main/pg_hba.conf
+  notify: restart postgres
+
+- name: create postgresql database
+  postgresql_db: name=appname
+  sudo: yes
+  sudo_user: postgres
+
+- name: create postgresql user
+  postgresql_user: db=appname
+                   name=django
+                   password={{ postgresql_password }}
+                   priv=ALL
+  sudo: yes
+  sudo_user: postgres

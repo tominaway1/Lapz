@@ -1,0 +1,54 @@
+- hosts: all
+  user: ubuntu
+  sudo: True
+  vars_files:
+    - passwords.yml
+  tasks:
+    - name: create appname user
+      user: name=appname groups=admin,sudo shell=/bin/bash password={{ ssh_password }} state=present
+    - name: grab ubuntu user's keys
+      command: cat /home/ubuntu/.ssh/authorized_keys
+      register: authorized_keys
+    - name: give ubuntu user's keys to appname user
+      authorized_key: user=appname key="{{ item }}"
+      with_items: authorized_keys.stdout_lines
+    - name: copy over sudoers file
+      copy: src=../shared/files/etc/sudoers dest=/etc/sudoers
+
+- hosts: all
+  user: appname
+  sudo: True
+  tasks:
+    - { include: ../shared/all.yml }
+
+- hosts: postgres
+  user: appname
+  sudo: True
+  vars_files:
+    - passwords.yml
+  tasks:
+    - { include: ../shared/postgres.yml }
+  handlers:
+    - { include: ../shared/handlers.yml }
+
+- hosts: app
+  user: appname
+  sudo: True
+  vars_files:
+     - settings.yml
+  tasks:
+    - { include: ../shared/source.yml }
+  tags:
+    - rsync
+
+- hosts: app
+  user: appname
+  sudo: True
+  vars_files:
+     - passwords.yml
+     - settings.yml
+  tasks:
+    - { include: ../shared/app.yml }
+  handlers:
+    - { include: ../shared/handlers.yml }
+

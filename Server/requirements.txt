@@ -1,0 +1,10 @@
+Django==1.6.5
+django-debug-toolbar
+django-shell-plus
+django-bootstrap3==4.10.0
+gevent
+gunicorn
+psycopg2
+pyyaml
+setproctitle
+South

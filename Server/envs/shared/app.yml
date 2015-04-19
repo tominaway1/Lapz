@@ -1,0 +1,103 @@
+- name: apt update
+  apt: update_cache=yes
+       cache_valid_time=3600
+
+- name: apt install
+  apt: pkg={{ item }}
+  with_items:
+    - libevent-dev
+    - nginx
+    - postfix
+    - postgresql-client-9.3
+    - postgresql-server-dev-9.3
+    - supervisor
+
+- name: pip install
+  pip: name={{ item }}
+  with_items:
+    - virtualenv
+    - virtualenvwrapper
+
+- name: create and update virtualenv
+  pip: virtualenv={{ env_root }}
+       requirements={{ site_root }}/requirements.txt
+
+- name: create log directory
+  file: path={{ site_root }}/log
+        mode=0664
+        owner=root
+        group=root
+        state=directory
+
+- name: copy local django settings file
+  template: src=../shared/local_settings.py.j2
+            dest={{ site_root }}/appname/local_settings.py
+            mode=0664
+            owner=root
+            group=root
+
+- name: create supervisor log
+  file: path=/var/log/supervisord.log
+        mode=0664
+        owner=root
+        group=root
+        state=touch
+
+- name: copy over supervisor overall config
+  copy: src=../shared/files/etc/supervisor/supervisord.conf
+        dest=/etc/supervisor/supervisord.conf
+
+- name: copy over supervisor app config
+  copy: src=../shared/files/etc/supervisor/conf.d/appname.conf
+        dest=/etc/supervisor/conf.d/appname.conf
+        mode=0664
+        owner=root
+        group=root
+  notify:
+    - restart supervisor
+    - restart app
+
+- name: delete default nginx config
+  file: dest=/etc/nginx/sites-available/default state=absent
+  file: dest=/etc/nginx/sites-enabled/default state=absent
+
+- name: copy over nginx config file
+  copy: src=../shared/files/etc/nginx/nginx.conf
+        dest=/etc/nginx/nginx.conf
+
+- name: copy over nginx site config
+  template: src=../shared/files/etc/nginx/sites-available/appname.j2
+            dest=/etc/nginx/sites-available/{{ file_name }}
+            mode=0664
+            owner=root
+            group=root
+
+- name: enable nginx config
+  file: src=/etc/nginx/sites-available/{{ file_name }}
+        dest=/etc/nginx/sites-enabled/{{ file_name }}
+        owner=root
+        group=root
+        state=link
+  notify:
+      - restart nginx
+
+- name: sync database
+  django_manage: command=syncdb
+                 app_path={{ site_root }}
+                 settings={{ site_name }}.settings
+                 virtualenv={{ env_root }}
+
+- name: run migrations
+  django_manage: command=migrate
+                 app_path={{ site_root }}
+                 settings={{ site_name }}.settings
+                 virtualenv={{ env_root }}
+
+- name: load initial data
+  django_manage: command=loaddata
+                 app_path={{ site_root }}
+                 settings={{ site_name }}.settings
+                 virtualenv={{ env_root }}
+                 fixtures={{ item }}
+  with_items:
+    - appname/data/users.yaml

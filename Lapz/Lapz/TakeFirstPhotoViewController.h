@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TakeFirstPhotoViewController : UIViewController
+@interface TakeFirstPhotoViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (readwrite) NSString *projectName;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction)takePhoto:(UIButton *)sender;
+- (IBAction)selectPhoto:(UIButton *)sender;
 
 @end
+

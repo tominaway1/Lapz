@@ -1,0 +1,41 @@
+upstream appname {
+  server unix:/tmp/appname.gunicorn.sock fail_timeout=0;
+}
+
+server {
+        listen 80;
+        server_name {{ server_name }};
+
+        access_log /opt/sites/appname/src/log/nginx.access.log;
+        error_log /opt/sites/appname/src/log/nginx.error.log;
+	
+	client_max_body_size 20M;
+
+        location ~ ^/static {
+                root /opt/sites/appname/src/appname;
+                access_log off;
+                expires max;
+        }
+
+        location ~ ^/media {
+                root /opt/sites/appname/src/appname;
+                access_log off;
+                expires max;
+        }
+
+        location /favicon.ico {
+                root /opt/sites/appname/src/appname/static;
+                access_log off;
+                expires max;
+        }
+
+        location / {
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_redirect off;
+                if (!-f $request_filename) {
+                        proxy_pass http://appname;
+                        break;
+                }
+        }
+}

@@ -1,0 +1,6 @@
+---
+site_name: appname
+env_root: /opt/sites/appname/venv
+site_root: /opt/sites/appname/src
+file_name: appname
+server_name: appname.com

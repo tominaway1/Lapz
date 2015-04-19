@@ -1,0 +1,15 @@
+- fields:
+    date_joined: 2014-05-15 18:37:40.744000+00:00
+    email: dev@thuzio.com
+    first_name: 'appname'
+    groups: []
+    is_active: true
+    is_staff: true
+    is_superuser: true
+    last_login: 2014-05-15 18:37:40.744000+00:00
+    last_name: 'Developer'
+    password: pbkdf2_sha256$12000$mHGucgQLvRwp$0RO0w+bOer18K3/+HIWYNoTT+Xq4OEIrR9/580zJ2lg= #sunlightmoviepolicedifference
+    user_permissions: []
+    username: dev@thuzio.com
+  model: auth.user
+  pk: 1

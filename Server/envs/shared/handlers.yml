@@ -1,0 +1,11 @@
+- name: restart postgres
+  service: name=postgresql state=restarted enabled=yes
+
+- name: restart supervisor
+  service: name=supervisor state=restarted enabled=yes
+
+- name: restart app
+  supervisorctl: name=appname state=restarted
+
+- name: restart nginx
+  service: name=nginx state=restarted enabled=yes

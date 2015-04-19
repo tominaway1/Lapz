@@ -1,0 +1,41 @@
+{% load bootstrap3 %}
+{% bootstrap_messages %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% bootstrap_css %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    {% bootstrap_javascript %}
+    <title>Create User</title>
+  </head>
+  <body>
+    
+    {% block content %}
+    {{ form.media }}
+    {% wysiwyg_setup  %}
+
+    <div class="container">
+      <div class="jumbotron">
+        <H1> Create a new User</H1>
+        <form method= "POST" action="" enctype="multipart/form-data">
+          <div id="form">
+            {% csrf_token %}
+            <table>
+              {% bootstrap_form form %}
+              {% wysiwyg_editor "id_description" %}
+              {% buttons %}
+              <button align="center" type="submit" class="btn btn-primary">
+                {% bootstrap_icon "ok" %} Submit
+              </button>
+              {% endbuttons %}
+            </table>
+          </div>
+      </div>
+    </form>
+  {% endblock %}
+  </body>
+</html>

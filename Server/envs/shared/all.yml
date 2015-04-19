@@ -1,0 +1,25 @@
+- name: add postgres apt key
+  apt_key: id=ACCC4CF8
+           url=https://www.postgresql.org/media/keys/ACCC4CF8.asc
+           state=present
+
+- name: add postgres apt repo
+  apt_repository: repo='deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main'
+                  state=present
+
+- name: apt update
+  apt: update_cache=yes
+       cache_valid_time=3600
+
+- name: apt install
+  apt: pkg={{ item }}
+  with_items:
+    - build-essential
+    - git
+    - python
+    - python-apt
+    - python-dev
+    - python-pip
+    - python-pycurl
+    - python-setuptools
+    - vim

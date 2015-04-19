@@ -1,0 +1,9 @@
+- name: create source dir
+  file: path={{ site_root }}
+        mode=0664
+        owner=root
+        group=root
+        state=directory
+
+- name: rsync source
+  synchronize: src=../../ dest={{ site_root }}
