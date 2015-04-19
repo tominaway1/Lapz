@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Lapzer Home-->
@@ -116,7 +116,7 @@
                                 </connections>
                             </textField>
                             <navigationBar contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Dd-MUj">
-                                <rect key="frame" x="-1" y="16" width="603" height="44"/>
+                                <rect key="frame" x="2" y="9" width="603" height="44"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.97254908084869385" green="0.93725496530532837" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
@@ -166,6 +166,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fAL-w6-SeJ"/>
+        <segue reference="sF1-uQ-wBM"/>
     </inferredMetricsTieBreakers>
 </document>
